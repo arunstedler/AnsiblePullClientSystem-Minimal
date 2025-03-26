@@ -19,6 +19,7 @@
       - freeipa-client
       - ubuntu-restricted-extras
       - sssd-tools
+      - steam
 
 - name: Install packages
   snap:
