@@ -5,6 +5,8 @@
       - tmux
       - krita
       - google-chrome-stable
+      - gimp
+      - kdenlive
 
 - name: Install packages
   snap:
