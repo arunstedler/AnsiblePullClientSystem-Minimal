@@ -4,6 +4,9 @@
     get_url:
       url: "https://cdn.eso.org/images/screen/eso0932a.jpg"
       dest: "/home/andrew/Pictures/wallpaper.jpg"
+      owner: andrew
+      group: andrew
+      mode: '0644'
 
   - name: Set GNOME wallpaper
     become_user: andrew
