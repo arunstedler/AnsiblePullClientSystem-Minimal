@@ -5,7 +5,7 @@
 
   - name: Set 24 Hour Clock
     become_user: andrew
-    dconf: key="/org/gnome/desktop/interface/clock-format" value="'12h'"
+    dconf: key="/org/gnome/desktop/interface/clock-format" value="'24h'"
 
   - name: Set Clock Show Weekday
     become_user: andrew
