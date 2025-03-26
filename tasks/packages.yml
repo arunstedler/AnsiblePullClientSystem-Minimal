@@ -2,10 +2,14 @@
   apt:
     name:
       - htop
+      - ntp
       - tmux
+      - rustdesk
+      - caffeine
       - krita
       - google-chrome-stable
       - gimp
+      - vlc
       - kdenlive
       - gnome-shell-extension-prefs
       - gedit-plugins
@@ -13,8 +17,12 @@
       - gnome-sushi
       - gnome-session
       - chrome-gnome-shell
+      - freeipa-client
 
 - name: Install packages
   snap:
     name:
       - freecad
+      - bitwarden
+      - discord
+      - 
