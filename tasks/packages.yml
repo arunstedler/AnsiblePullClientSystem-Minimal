@@ -23,6 +23,7 @@
       - syncthing
       - gh
       - python3-pip
+      - psutils
 
 - name: Install packages
   snap:
@@ -32,7 +33,3 @@
       - discord
 
 
-- name: Install psutil
-  ansible.builtin.pip:
-    name:
-      - psutil
