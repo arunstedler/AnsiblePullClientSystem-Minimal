@@ -23,7 +23,7 @@
       - syncthing
       - gh
       - python3-pip
-      - psutils
+      - python3-psutils
 
 - name: Install packages
   snap:
@@ -31,7 +31,3 @@
       - freecad
       - bitwarden
       - discord
-
-- name: Install psutil
-  ansible.builtin.pip:
-    name: psutil
