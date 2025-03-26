@@ -20,6 +20,7 @@
       - ubuntu-restricted-extras
       - sssd-tools
       - steam
+      - syncthing
 
 - name: Install packages
   snap:
