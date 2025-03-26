@@ -22,6 +22,7 @@
       - steam
       - syncthing
       - gh
+      - psutil
 
 - name: Install packages
   snap:
