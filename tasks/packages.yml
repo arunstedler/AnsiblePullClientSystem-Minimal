@@ -21,6 +21,7 @@
       - sssd-tools
       - steam
       - syncthing
+      - gh
 
 - name: Install packages
   snap:
