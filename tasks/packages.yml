@@ -7,6 +7,12 @@
       - google-chrome-stable
       - gimp
       - kdenlive
+      - gnome-shell-extension-prefs
+      - gedit-plugins
+      - gnome-tweaks
+      - gnome-sushi
+      - gnome-session
+      - chrome-gnome-shell
 
 - name: Install packages
   snap:
