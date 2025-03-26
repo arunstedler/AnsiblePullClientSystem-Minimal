@@ -1,16 +1,20 @@
 ---
-  - name: Set GNOME Wallpaper
-    become_user: andrew
-    dconf: key="/org/gnome/desktop/background/picture-uri" value="'https://cdn.eso.org/images/screen/eso0932a.jpg'"
+- name: Set GNOME Wallpaper
+   become_user: andrew
+   dconf: key="/org/gnome/desktop/background/picture-uri" value="'https://cdn.eso.org/images/screen/eso0932a.jpg'"
+  
+- name: Set GNOME Wallpaper scale
+  become_user: andrew
+  dconf: key="/org/gnome/desktop/background/picture-options" value="'scaled'"
+ 
+- name: Set 24 Hour Clock
+  become_user: andrew
+  dconf: key="/org/gnome/desktop/interface/clock-format" value="'24h'"
 
-  - name: Set 24 Hour Clock
-    become_user: andrew
-    dconf: key="/org/gnome/desktop/interface/clock-format" value="'24h'"
+- name: Set Clock Show Weekday
+  become_user: andrew
+  dconf: key="/org/gnome/desktop/interface/clock-show-weekday" value="'true'"
 
-  - name: Set Clock Show Weekday
-    become_user: andrew
-    dconf: key="/org/gnome/desktop/interface/clock-show-weekday" value="'true'"
-
-  - name: Set Top Bar Show Battery Percentage
-    become_user: andrew
-    dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="'true'"
+- name: Set Top Bar Show Battery Percentage
+  become_user: andrew
+  dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="'true'"
