@@ -9,4 +9,4 @@ to install:
 
 sudo apt install git ansible -y
 
-ansible-pull -o -U https://github.com/arunstedler/AnsiblePullClientSystem.git
+sudo ansible-pull -U https://github.com/arunstedler/AnsiblePullClientSystem.git
