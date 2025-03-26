@@ -8,7 +8,7 @@
   - name: Set GNOME wallpaper
     become_user: andrew
     command: >
-      gsettings set org.gnome.desktop.background picture-uri file:///home/andrew/Pictures/wallpaper.jpg
+      dconf write /org/gnome/desktop/background/picture-uri "'file:///home/andrew/Pictures/wallpaper.jpg'"
 
   - name: Set 24 Hour Clock
     become_user: andrew
