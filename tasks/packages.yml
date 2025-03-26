@@ -5,4 +5,8 @@
       - tmux
       - krita
       - google-chrome-stable
+
+- name: Install packages
+  snap:
+    name:
       - freecad
