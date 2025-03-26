@@ -18,6 +18,7 @@
       - gnome-session
       - chrome-gnome-shell
       - freeipa-client
+      - ubuntu-restricted-extras
 
 - name: Install packages
   snap:
