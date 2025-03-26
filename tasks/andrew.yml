@@ -10,8 +10,10 @@
 
   - name: Set GNOME wallpaper
     become_user: andrew
-    command: >
-      dconf write /org/gnome/desktop/background/picture-uri "'file:///home/andrew/Pictures/wallpaper.jpg'"
+    community.general.dconf:
+      key: /org/gnome/desktop/background/picture-uri
+      value: "'file:///home/andrew/Pictures/wallpaper.jpg'"
+      state: present
 
   - name: Set 24 Hour Clock
     become_user: andrew
