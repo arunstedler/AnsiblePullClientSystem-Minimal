@@ -31,3 +31,8 @@
       - bitwarden
       - discord
 
+
+- name: Install psutil
+  ansible.builtin.pip:
+    name:
+      - psutil
