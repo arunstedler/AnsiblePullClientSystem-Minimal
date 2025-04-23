@@ -7,7 +7,7 @@
 
 - name: install cron job (stop caffeine @ 10pm)
   cron:
-    user: svc_ansible
+    user: andrew
     name: "stop caffeine"
     day: "*"
     hour: "22"
