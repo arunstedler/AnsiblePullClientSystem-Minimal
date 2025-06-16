@@ -1,6 +1,8 @@
 - hosts: localhost
   connection: local
   become: true
+  roles:
+  - { role: webarchitect609.google_chrome }
 
   pre_tasks:
     - name: update repositories
@@ -10,7 +12,6 @@
 
   tasks:
     - include_tasks: tasks/cron.yml
-    - include_tasks: tasks/chrome.yml
     - include_tasks: tasks/packages.yml
     - include_tasks: tasks/time.yml
     - include_tasks: tasks/andrew.yml
