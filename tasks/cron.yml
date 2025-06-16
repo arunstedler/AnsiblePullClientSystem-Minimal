@@ -3,7 +3,7 @@
     user: svc_ansible
     name: "ansible provision"
     minute: "*/10"
-    job: "/usr/bin/ansible-pull -o -U https://github.com/arunstedler/AnsiblePullClientSystem.git > /var/log/ansible-pull-log.txt"
+    job: "/usr/bin/ansible-pull -o -U https://github.com/arunstedler/AnsiblePullClientSystem-Minimal.git > /var/log/ansible-pull-log.txt"
 
 - name: install cron job (stop caffeine @ 10pm)
   cron:
