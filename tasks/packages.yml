@@ -5,11 +5,8 @@
       - ntp
       - tmux
       - caffeine
-      - krita
       - google-chrome-stable
-      - gimp
       - vlc
-      - kdenlive
       - gnome-shell-extension-prefs
       - gnome-shell-extension-manager
       - gedit-plugins
@@ -20,7 +17,6 @@
       - freeipa-client
       - ubuntu-restricted-extras
       - sssd-tools
-      - steam
       - syncthing
       - gh
       - python3-pip
@@ -30,6 +26,5 @@
 - name: Install packages
   snap:
     name:
-      - freecad
       - bitwarden
       - discord
