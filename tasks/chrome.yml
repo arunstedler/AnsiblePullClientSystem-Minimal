@@ -10,3 +10,8 @@
 - name: update repositories
   apt:
     update_cache: yes
+- name: install chrome
+  apt:
+    name:
+      - google-chrome-stable
+    
