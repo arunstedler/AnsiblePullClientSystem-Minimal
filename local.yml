@@ -2,7 +2,7 @@
   connection: local
   become: true
   roles:
-  - { role: webarchitect609.google_chrome }
+  - role: webarchitect609.google_chrome
 
   pre_tasks:
     - name: update repositories
