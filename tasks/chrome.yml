@@ -1,4 +1,3 @@
----
   - name: install Google Chrome
     become: true
     tasks:
