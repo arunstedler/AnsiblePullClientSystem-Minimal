@@ -27,18 +27,18 @@
     become_user: andrew
     dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="'true'"
 
-    - name: Set dock position to bottom for all users
-      ansible.builtin.shell: |
-        gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-      args:
-        executable: /bin/bash # Ensure bash is used for shell module
-      become_user: "{{ ansible_user | default('your_user') }}" # Replace 'your_user' or ensure ansible_user is defined
+  - name: Set dock position to bottom for all users
+    ansible.builtin.shell: |
+      gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+    args:
+      executable: /bin/bash # Ensure bash is used for shell module
+    become_user: "{{ ansible_user | default('your_user') }}" # Replace 'your_user' or ensure ansible_user is defined
       # This task needs to be run as the user whose GNOME settings you want to change.
       # If you're managing multiple users, you might need a loop or to run this for each user.
       # For a single user, `ansible_user` often works, but explicitly setting it is safer.
       # If you want to apply it globally for new users, that's a more complex GDM/skeleton setup.
       # This playbook targets existing user's settings.
 
-    - name: Display success message
-      ansible.builtin.debug:
-        msg: "Ubuntu Dock has been moved to the bottom of the screen."
+  - name: Display success message
+    ansible.builtin.debug:
+      msg: "Ubuntu Dock has been moved to the bottom of the screen."
