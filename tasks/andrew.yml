@@ -26,3 +26,11 @@
   - name: Set Top Bar Show Battery Percentage
     become_user: andrew
     dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="'true'"
+
+  - name: Set Ubuntu Dock position to bottom
+    become: yes
+    become_user: andrew  # Replace 'your_username' with the actual username of the user whose dock you want to modify
+    community.general.gsettings:
+      schema: org.gnome.shell.extensions.dash-to-dock
+      key: dock-position
+      value: "'BOTTOM'"
