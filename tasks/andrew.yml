@@ -11,7 +11,7 @@
   - name: Set GNOME wallpaper
     become_user: andrew
     community.general.dconf:
-      key: /org/gnome/desktop/background/picture-uri
+      key: "/org/gnome/desktop/background/picture-uri"
       value: "'file:///home/andrew/Pictures/wallpaper.jpg'"
       state: present
   
