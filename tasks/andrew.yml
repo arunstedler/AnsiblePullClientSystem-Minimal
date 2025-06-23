@@ -14,22 +14,25 @@
       key: /org/gnome/desktop/background/picture-uri
       value: "'file:///home/andrew/Pictures/wallpaper.jpg'"
       state: present
-
+  
   - name: Set 24 Hour Clock
     become_user: andrew
+    community.general.dconf:
       key: "/org/gnome/desktop/interface/clock-format" 
-      value: "24h"
+      value: "'24h'"
       state: present
     
 
   - name: Set Clock Show Weekday
     become_user: andrew
+    community.general.dconf:
       key: "/org/gnome/desktop/interface/clock-show-weekday" 
       value: "'true'"
       state: present
 
   - name: Set Top Bar Show Battery Percentage
     become_user: andrew
+    community.general.dconf:
       key: "/org/gnome/desktop/interface/show-battery-percentage" 
       value: "'true'"
       state: present
