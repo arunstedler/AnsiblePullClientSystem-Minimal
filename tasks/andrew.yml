@@ -42,3 +42,10 @@
   - name: Display success message
     ansible.builtin.debug:
       msg: "Ubuntu Dock has been moved to the bottom of the screen."
+
+  - name: Disable "extend to screen edge" for the dock (to center it)
+        ansible.builtin.shell: |
+          gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+        args:
+          executable: /bin/bash
+        become_user: andrew
