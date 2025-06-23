@@ -50,3 +50,10 @@
       key: "/org/gnome/shell/extensions/dash-to-dock/extend-height" 
       value: "false"
       state: present
+
+  - name: Disable natural scrolling for touchpad (enables traditional scrolling)
+    become_user: andrew
+    community.general.dconf:
+      key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll" 
+      value: "false"
+      state: present
