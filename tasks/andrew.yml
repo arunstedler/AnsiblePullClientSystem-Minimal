@@ -28,15 +28,11 @@
     dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="'true'"
 
   - name: Set dock position to bottom using dconf
-    ansible.builtin.shell: |
-      dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
-    args:
-      executable: /bin/bash
     become_user: andrew
+    community.general.dconf:
+    dconf: keys="/org/gnome/shell/extensions/dash-to-dock/dock-position" value="'BOTTOM'"
 
   - name: Disable "extend to screen edge" (to center it) using dconf
-    ansible.builtin.shell: |
-      dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height "false"
-    args:
-      executable: /bin/bash
     become_user: andrew
+    community.general.dconf:
+    dconf: keys="/org/gnome/shell/extensions/dash-to-dock/extend-height" value"false"
