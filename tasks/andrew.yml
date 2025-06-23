@@ -18,7 +18,7 @@
   - name: Set 24 Hour Clock
     become_user: andrew
       key: "/org/gnome/desktop/interface/clock-format" 
-      value: "'24h'"
+      value: "24h"
       state: present
     
 
