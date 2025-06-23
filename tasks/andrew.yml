@@ -17,15 +17,22 @@
 
   - name: Set 24 Hour Clock
     become_user: andrew
-    dconf: key="/org/gnome/desktop/interface/clock-format" value="'24h'"
+      key: "/org/gnome/desktop/interface/clock-format" 
+      value: "'24h'"
+      state: present
+    
 
   - name: Set Clock Show Weekday
     become_user: andrew
-    dconf: key="/org/gnome/desktop/interface/clock-show-weekday" value="'true'"
+      key: "/org/gnome/desktop/interface/clock-show-weekday" 
+      value: "'true'"
+      state: present
 
   - name: Set Top Bar Show Battery Percentage
     become_user: andrew
-    dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="'true'"
+      key: "/org/gnome/desktop/interface/show-battery-percentage" 
+      value: "'true'"
+      state: present
 
   - name: Set dock position to bottom using dconf
     become_user: andrew
