@@ -30,9 +30,13 @@
   - name: Set dock position to bottom using dconf
     become_user: andrew
     community.general.dconf:
-    dconf: keys="/org/gnome/shell/extensions/dash-to-dock/dock-position" value="'BOTTOM'"
+      key: "/org/gnome/shell/extensions/dash-to-dock/dock-position" 
+      value: "'BOTTOM'"
+      state: present
 
   - name: Disable "extend to screen edge" (to center it) using dconf
     become_user: andrew
     community.general.dconf:
-    dconf: keys="/org/gnome/shell/extensions/dash-to-dock/extend-height" value"false"
+      key: "/org/gnome/shell/extensions/dash-to-dock/extend-height" 
+      value: "false"
+      state: present
