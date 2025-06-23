@@ -28,7 +28,7 @@
     dconf: key="/org/gnome/desktop/interface/show-battery-percentage" value="'true'"
 
   - name: Set dock position to bottom for all users
-    ansible.builtin.shell: |
+    ansible.builtin.shell: 
       gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
     args:
       executable: /bin/bash # Ensure bash is used for shell module
@@ -44,7 +44,7 @@
       msg: "Ubuntu Dock has been moved to the bottom of the screen."
 
   - name: Disable "extend to screen edge" for the dock (to center it)
-        ansible.builtin.shell: |
+        ansible.builtin.shell: 
           gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
         args:
           executable: /bin/bash
