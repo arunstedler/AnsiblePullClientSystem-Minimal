@@ -21,9 +21,29 @@
       - python3-pip
       - python3-psutil
       - solaar
+    state: present
+    when: ansible_distribution in ["Debian", "Ubuntu"]
 
 - name: Install packages
   snap:
     name:
       - bitwarden
       - discord
+    state: present
+    when: ansible_distribution in ["Debian", "Ubuntu"]
+    
+- name: Install Packages
+  dnf:
+    name:
+      - htop
+      - tmux
+      - vlc
+      - freeipa-client
+      - syncthing
+      - gh
+      - solaar
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-caffeine
+      - gnome-tweaks
+    state: present
+    when: ansible_distribution in ["Fedora"]
