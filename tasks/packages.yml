@@ -21,14 +21,14 @@
       - python3-pip
       - python3-psutil
       - solaar
-      when: ansible_distribution in ["Debian", "Ubuntu"]
+    when: ansible_distribution == "Ubuntu"
 
 - name: Install packages
   snap:
     name:
       - bitwarden
       - discord
-    when: ansible_distribution in ["Debian", "Ubuntu"]
+    when: ansible_distribution == "Ubuntu"
     
 - name: Install Packages
   dnf:
