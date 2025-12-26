@@ -4,14 +4,12 @@
 
   pre_tasks:
     - name: update repositories
-      apt:
-        update_cache: yes
+      apt: update_cache: yes
       changed_when: False
       when: ansible_distribution in ["Debian", "Ubuntu"]
 
     - name: update repositories
-      dnf:
-        update_cache: yes
+      dnf: update_cache: yes
       changed_when: False
       when: ansible_distribution in ["Fedora"]  
     
