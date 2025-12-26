@@ -21,7 +21,7 @@
       - python3-pip
       - python3-psutil
       - solaar
-    when: ansible_distribution in ["Debian", "Ubuntu"]
+      when: ansible_distribution in ["Debian", "Ubuntu"]
 
 - name: Install packages
   snap:
