@@ -21,7 +21,6 @@
       - python3-pip
       - python3-psutil
       - solaar
-    state: present
     when: ansible_distribution in ["Debian", "Ubuntu"]
 
 - name: Install packages
@@ -29,7 +28,6 @@
     name:
       - bitwarden
       - discord
-    state: present
     when: ansible_distribution in ["Debian", "Ubuntu"]
     
 - name: Install Packages
