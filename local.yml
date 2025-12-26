@@ -11,7 +11,7 @@
     - name: update repositories
       dnf: update_cache=yes
       changed_when: False
-      when: ansible_distribution in ["Fedora"]  
+      when: ansible_distribution == "Fedora" 
     
   tasks:
     - include_tasks: tasks/cron.yml
