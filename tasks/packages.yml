@@ -39,7 +39,7 @@
 
 - name: Install a Flatpak application 
   community.general.flatpak:
-    name: termix_linux_flatpak.flatpak
+    name: com.karmaa.termix
     state: present
     method: user
     remote: termix
