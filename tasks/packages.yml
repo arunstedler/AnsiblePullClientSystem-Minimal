@@ -22,6 +22,7 @@
       - python3-psutil
       - solaar
       - flatpak
+      - gnome-software-plugin-flatpak
 
 - name: Install packages
   snap:
@@ -42,4 +43,3 @@
     state: present
     method: user
     remote: termix
-  become: yes
