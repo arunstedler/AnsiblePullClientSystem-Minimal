@@ -27,7 +27,6 @@
     name:
       - bitwarden
       - discord
-    when: ansible_distribution == "Ubuntu"
 
 - name: Add Flathub repository
   community.general.flatpak_remote:
@@ -41,19 +40,3 @@
     state: present
     method: system
   become: yes
-      
-- name: Install Packages
-  dnf:
-    name:
-      - htop
-      - tmux
-      - vlc
-      - freeipa-client
-      - syncthing
-      - gh
-      - solaar
-      - gnome-shell-extension-dash-to-dock
-      - gnome-shell-extension-caffeine
-      - gnome-tweaks
-    state: present
-    when: ansible_distribution in ["Fedora"]
