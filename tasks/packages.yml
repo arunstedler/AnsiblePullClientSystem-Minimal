@@ -21,7 +21,6 @@
       - python3-pip
       - python3-psutil
       - solaar
-    when: ansible_distribution == "Ubuntu"
 
 - name: Install packages
   snap:
