@@ -21,6 +21,7 @@
       - python3-pip
       - python3-psutil
       - solaar
+      - flatpak
 
 - name: Install packages
   snap:
