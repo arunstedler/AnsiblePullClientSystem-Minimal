@@ -39,6 +39,6 @@
   community.general.flatpak:
     name: termix_linux_flatpak.flatpak
     state: present
-    method: system
+    method: user
     remote: termix
   become: yes
