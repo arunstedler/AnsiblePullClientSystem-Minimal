@@ -37,7 +37,7 @@
 
 - name: Install a Flatpak application 
   community.general.flatpak:
-    name: com.github.Termix-SSH
+    name: termix_linux_flatpak.flatpak
     state: present
     method: system
     remote: termix
