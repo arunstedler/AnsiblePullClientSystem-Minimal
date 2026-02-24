@@ -23,6 +23,7 @@
       - solaar
       - flatpak
       - gnome-software-plugin-flatpak
+			- wireshark
 
 - name: Install packages
   snap:
