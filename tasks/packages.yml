@@ -23,7 +23,9 @@
       - solaar
       - flatpak
       - gnome-software-plugin-flatpak
-			- wireshark
+      - wireshark
+      - clamav
+      - clamav-daemon
 
 - name: Install packages
   snap:
