@@ -58,13 +58,6 @@
       value: "false"
       state: present
 
-  - name: Ensure GNOME Extensions app is installed (Optional but recommended)
-    become_user: andrew
-    become: true
-    ansible.builtin.dnf:
-      name: gnome-extensions-app
-      state: present
-
   - name: Enable Dash to Dock extension
     become_user: andrew
     ansible.builtin.shell: |
