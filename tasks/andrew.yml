@@ -58,15 +58,12 @@
       value: "false"
       state: present
 
-  - name: Enable Dash to Dock extension
-    ansible.builtin.shell: |
-      ENABLED_EXTENSIONS=$(gsettings get org.gnome.shell enabled-extensions)
-      # Check if the extension is not already in the list
-      if [[ ! "$ENABLED_EXTENSIONS" =~ "{{ dash_to_dock_uuid }}" ]]; then
-        NEW_EXTENSIONS=$(echo "$ENABLED_EXTENSIONS" | sed "s/]/, '{{ dash_to_dock_uuid }}']/")
-        gsettings set org.gnome.shell enabled-extensions "$NEW_EXTENSIONS"
-      fi
-    changed_when: false
+  - name: Enable dash-to-dock in dconf
+    ansible.builtin.command:
+      cmd: >
+        dconf write /org/gnome/shell/enabled-extensions 
+        "{{ (current_extensions.stdout | default('[]') | regex_replace('\\s', '') | replace(\"'\", \"\\\"\") | from_json + [extension_uuid]) | unique | to_json }}"
+    when: extension_uuid not in current_extensions.stdout
     
   - name: Set Dash to Dock preferences (Example - autohide and bottom position)
     become_user: andrew
