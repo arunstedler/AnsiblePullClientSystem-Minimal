@@ -59,6 +59,7 @@
       state: present
 
   - name: Enable Dash to Dock extension
+    become_user: andrew
     ansible.builtin.command:
       cmd: "gnome-extensions enable dash-to-dock@micxgx.gmail.com"
     register: enable_ext
@@ -66,6 +67,7 @@
     failed_when: enable_ext.rc != 0 and 'already enabled' not in enable_ext.stderr
 
   - name: Set Dash to Dock preferences (Example - autohide and bottom position)
+    become_user: andrew
     ansible.builtin.shell: |
       dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "BOTTOM"
       dconf write /org/gnome/shell/extensions/dash-to-dock/intellihide false
