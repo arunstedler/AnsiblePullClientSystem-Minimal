@@ -35,6 +35,8 @@
       - tmux
       - vlc
       - gedit-plugins
+      - gnome-extensions-app
+      - gnome-shell-extension-dash-to-dock
       - gnome-tweaks
       - gnome-session
       - freeipa-client
