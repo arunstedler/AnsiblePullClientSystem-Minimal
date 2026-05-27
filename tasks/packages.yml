@@ -62,6 +62,7 @@
     state: present
     method: user
     flatpakrepo_url: https://github.com/Termix-SSH/Termix/releases/latest/download/termix_linux_flatpak.flatpak
+  when: ansible_os_family == "Debian"
 
 - name: Install a Flatpak application 
   community.general.flatpak:
@@ -69,3 +70,4 @@
     state: present
     method: user
     remote: termix
+  when: ansible_os_family == "Debian"
