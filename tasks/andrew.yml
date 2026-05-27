@@ -60,7 +60,7 @@
 
   - name: Enable Dash to Dock extension
     become_user: andrew
-    ansible.builtin.shell:
+    ansible.builtin.shell: |
       ENABLED_EXTENSIONS=$(gsettings get org.gnome.shell enabled-extensions)
       # Check if the extension is not already in the list
       if [[ ! "$ENABLED_EXTENSIONS" =~ "{{ dash_to_dock_uuid }}" ]]; then
