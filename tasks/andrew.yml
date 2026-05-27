@@ -58,14 +58,6 @@
       value: "false"
       state: present
 
-- name: Install and configure Dash to Dock on Fedora 44
-  become_user: andrew
-  hosts: localhost
-  become: false
-  vars:
-    # Set the unique extension ID string
-    dash_to_dock_uuid: "dash-to-dock@micxgx.gmail.com"
-
   - name: Install Dash to Dock Fedora package
     become_user: andrew
     become: true
