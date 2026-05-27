@@ -26,6 +26,35 @@
       - wireshark
       - clamav
       - clamav-daemon
+      
+- name: Install packages
+  dnf:
+    name:
+      - htop
+      - ntp
+      - tmux
+      - caffeine
+      - vlc
+      - gnome-shell-extension-prefs
+      - gnome-shell-extension-manager
+      - gedit-plugins
+      - gnome-tweaks
+      - gnome-sushi
+      - gnome-session
+      - chrome-gnome-shell
+      - freeipa-client
+      - ubuntu-restricted-extras
+      - sssd-tools
+      - syncthing
+      - gh
+      - python3-pip
+      - python3-psutil
+      - solaar
+      - flatpak
+      - gnome-software-plugin-flatpak
+      - wireshark
+      - clamav
+      - clamav-daemon
 
 - name: Install packages
   snap:
