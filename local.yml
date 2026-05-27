@@ -14,7 +14,7 @@
       when: ansible_distribution == "Fedora" 
     
   tasks:
-#    - include_tasks: tasks/cron.yml
+    - include_tasks: tasks/cron.yml
     - include_tasks: tasks/packages.yml
     - include_tasks: tasks/time.yml
-#    - include_tasks: tasks/andrew.yml
+    - include_tasks: tasks/andrew.yml
