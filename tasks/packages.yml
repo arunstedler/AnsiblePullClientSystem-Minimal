@@ -32,9 +32,7 @@
   dnf:
     name:
       - htop
-      - ntp
       - tmux
-      - caffeine
       - vlc
       - gedit-plugins
       - gnome-tweaks
