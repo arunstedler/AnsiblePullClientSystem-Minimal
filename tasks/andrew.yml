@@ -58,13 +58,39 @@
       value: "false"
       state: present
 
-  - name: Enable Dash to Dock extension
-    become_user: andrew
-    ansible.builtin.command:
-      cmd: "gnome-extensions enable dash-to-dock@micxgx.gmail.com"
-    register: enable_ext
-    changed_when: "'already enabled' not in enable_ext.stdout"
-    failed_when: enable_ext.rc != 0 and 'already enabled' not in enable_ext.stderr
+- name: Install and configure Dash to Dock on Fedora 44
+  become_user: andrew
+  hosts: localhost
+  become: false
+  vars:
+    # Set the unique extension ID string
+    dash_to_dock_uuid: "dash-to-dock@micxgx.gmail.com"
+    
+  tasks:
+    - name: Install Dash to Dock Fedora package
+      become_user: andrew
+      become: true
+      ansible.builtin.dnf:
+        name: gnome-shell-extension-dash-to-dock
+        state: present
+
+    - name: Ensure GNOME Extensions app is installed (Optional but recommended)
+      become_user: andrew
+      become: true
+      ansible.builtin.dnf:
+        name: gnome-extensions-app
+        state: present
+
+    - name: Enable Dash to Dock extension
+      become_user: andrew
+      ansible.builtin.shell: |
+        ENABLED_EXTENSIONS=$(gsettings get org.gnome.shell enabled-extensions)
+        # Check if the extension is not already in the list
+        if [[ ! "$ENABLED_EXTENSIONS" =~ "{{ dash_to_dock_uuid }}" ]]; then
+          NEW_EXTENSIONS=$(echo "$ENABLED_EXTENSIONS" | sed "s/]/, '{{ dash_to_dock_uuid }}']/")
+          gsettings set org.gnome.shell enabled-extensions "$NEW_EXTENSIONS"
+        fi
+      changed_when: false
 
   - name: Set Dash to Dock preferences (Example - autohide and bottom position)
     become_user: andrew
