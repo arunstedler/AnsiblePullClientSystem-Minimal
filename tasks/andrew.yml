@@ -58,13 +58,6 @@
       value: "false"
       state: present
 
-  - name: Install Dash to Dock Fedora package
-    become_user: andrew
-    become: true
-    ansible.builtin.dnf:
-      name: gnome-shell-extension-dash-to-dock
-      state: present
-
   - name: Ensure GNOME Extensions app is installed (Optional but recommended)
     become_user: andrew
     become: true
