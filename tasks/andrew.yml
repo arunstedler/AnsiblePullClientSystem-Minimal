@@ -1,6 +1,7 @@
 ---
 
   - name: Create a directory
+    become_user: andrew
     ansible.builtin.file:
       path: "/home/andrew/Pictures/"
       state: directory
