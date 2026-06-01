@@ -1,4 +1,11 @@
 ---
+
+  - name: Create a directory
+    ansible.builtin.file:
+      path: "/home/andrew/Pictures/"
+      state: directory
+      mode: '0664'
+      
   - name: Download the wallpaper image
     become_user: andrew
     get_url:
