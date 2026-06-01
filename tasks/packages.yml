@@ -1,4 +1,4 @@
-- name: Install packages
+- name: Install packages (Ubuntu)
   apt:
     name:
       - htop
@@ -27,7 +27,7 @@
       - clamav-daemon
   when: ansible_distribution == "Ubuntu"
   
-- name: Install packages
+- name: Install packages (Debian)
   apt:
     name:
       - htop
@@ -53,10 +53,10 @@
       - wireshark
       - clamav
       - clamav-daemon
-  when: ansible_os_family == "Debian"
+  when: ansible_distribution == "Debian"
 
   
-- name: Install packages
+- name: Install packages (Fedora)
   dnf:
     name:
       - htop
@@ -77,14 +77,14 @@
       - flatpak
       - wireshark
       - clamav
-  when: ansible_os_family == "RedHat"
+  when: ansible_distribution == "Fedora"
 
 - name: Install packages
   snap:
     name:
       - bitwarden
       - discord
-  when: ansible_os_family == "Debian"
+  when: ansible_distribution == "Ubuntu"
 
 - name: Add Flathub repository
   community.general.flatpak_remote:
@@ -92,12 +92,12 @@
     state: present
     method: user
     flatpakrepo_url: https://github.com/Termix-SSH/Termix/releases/latest/download/termix_linux_flatpak.flatpak
-  when: ansible_os_family == "Debian"
-
+  when: ansible_distribution == "Ubuntu"
+  
 - name: Install a Flatpak application 
   community.general.flatpak:
     name: com.karmaa.termix
     state: present
     method: user
     remote: termix
-  when: ansible_os_family == "Debian"
+  when: ansible_distribution == "Ubuntu"
