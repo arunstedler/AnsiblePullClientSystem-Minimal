@@ -2,7 +2,6 @@
   apt:
     name:
       - htop
-      - ntp
       - tmux
       - caffeine
       - vlc
