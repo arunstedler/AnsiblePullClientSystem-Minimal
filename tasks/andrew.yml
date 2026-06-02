@@ -57,17 +57,3 @@
       key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll" 
       value: "false"
       state: present
-
-  - name: Enable dash-to-dock in dconf
-    ansible.builtin.command:
-      cmd: >
-        dconf write /org/gnome/shell/enabled-extensions 
-        "{{ (current_extensions.stdout | default('[]') | regex_replace('\\s', '') | replace(\"'\", \"\\\"\") | from_json + [extension_uuid]) | unique | to_json }}"
-    when: extension_uuid not in current_extensions.stdout
-    
-  - name: Set Dash to Dock preferences (Example - autohide and bottom position)
-    become_user: andrew
-    ansible.builtin.shell: |
-      dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "BOTTOM"
-      dconf write /org/gnome/shell/extensions/dash-to-dock/intellihide false
-      dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed false
