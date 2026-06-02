@@ -85,19 +85,3 @@
       - bitwarden
       - discord
   when: ansible_distribution == "Ubuntu"
-
-- name: Add Flathub repository
-  community.general.flatpak_remote:
-    name: termix
-    state: present
-    method: user
-    flatpakrepo_url: https://github.com/Termix-SSH/Termix/releases/latest/download/termix_linux_flatpak.flatpak
-  when: ansible_distribution == "Ubuntu"
-  
-- name: Install a Flatpak application 
-  community.general.flatpak:
-    name: com.karmaa.termix
-    state: present
-    method: user
-    remote: termix
-  when: ansible_distribution == "Ubuntu"
