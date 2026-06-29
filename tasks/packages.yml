@@ -81,7 +81,7 @@
       - wireshark
       - clamav
       - clamav-daemon
-  when: ansible_distribution == "Kali"
+  when: ansible_distribution == "Kali GNU/Linux"
 
   
 - name: Install packages (Fedora)
