@@ -11,7 +11,7 @@
     - name: update repositories
       apt: update_cache=yes
       changed_when: False
-      when: ansible_distribution == "Kali"
+      when: ansible_distribution == "Kali GNU/Linux"
 
     - name: update repositories
       dnf: update_cache=yes
