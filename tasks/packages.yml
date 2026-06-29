@@ -55,6 +55,34 @@
       - clamav-daemon
   when: ansible_distribution == "Debian"
 
+- name: Install packages (Kali)
+  apt:
+    name:
+      - htop
+      - tmux
+      - caffeine
+      - vlc
+      - gnome-shell-extension-prefs
+      - gnome-shell-extension-manager
+      - gedit-plugins
+      - gnome-tweaks
+      - gnome-sushi
+      - gnome-session
+      - chrome-gnome-shell
+      - freeipa-client
+      - sssd-tools
+      - syncthing
+      - gh
+      - python3-pip
+      - python3-psutil
+      - solaar
+      - flatpak
+      - gnome-software-plugin-flatpak
+      - wireshark
+      - clamav
+      - clamav-daemon
+  when: ansible_distribution == "Kali"
+
   
 - name: Install packages (Fedora)
   dnf:
